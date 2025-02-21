@@ -1,0 +1,612 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+button {
+  cursor: pointer;
+}
+
+.cabecario {
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  background-color: rgb(243, 243, 243);
+  color: #4169e1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0px;
+  font-family: "Lexend Deca", serif;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pesquise {
+  margin: 0 0px 0 75px;
+  background: none;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: .2vh #4169e1 solid;
+  color: #4169e1;
+}
+
+.pesquise:hover {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: .2vh #4169e1 solid;
+}
+
+.pesquise:active {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: .2vh #4169e1 solid;
+}
+
+.pesquise:focus {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: .2vh #4169e1 solid;
+  outline: none;
+}
+
+.titulo_categoria {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo {
+  margin: 1px 0 0 0;
+}
+
+.categorias {
+  display: flex;
+  gap: 20px;
+  font-size: 1.2em;
+}
+
+.inicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.inicio::after {
+  content: '';
+  position: absolute;
+  top: 72px;
+  width: 0%;
+  height: 3px;
+  background-color: #000080;
+  transition: width 0.4s ease;
+}
+
+.inicio:hover::after {
+  width: 5%;
+}
+
+.produto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.produto::after {
+  content: '';
+  position: absolute;
+  top: 72px;
+  width: 0%;
+  height: 3px;
+  background-color: #000080;
+  transition: width 0.4s ease;
+}
+
+.produto:hover::after {
+  width: 7%;
+}
+
+.contato {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.contato::after {
+  content: '';
+  position: absolute;
+  top: 72px;
+  width: 0%;
+  height: 3px;
+  background-color: #000080;
+  transition: width 0.4s ease;
+}
+
+.contato:hover::after {
+  width: 6%;
+}
+
+.cadastro {
+  display: flex;
+  gap: 10px;
+}
+
+.cadastre:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.inicie:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.carrinho {
+  background: none;
+  border: none;
+  transition: .1s;
+  width: 50px; /* Largura do item */
+  height: 50px; /* Altura do item */
+  background-color: transparent; /* Cor de fundo padrão */
+  border-radius: 50%; /* Formato redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease; /* Transição suave */
+  margin: 0 75px 0 0px;
+  cursor: pointer;
+}
+
+.carrinho:hover {
+  background-color: #cef3ff; /* Cor de fundo ao passar o mouse */
+}
+
+.secao1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  position: absolute;
+  width: 30vw;
+  z-index: 99999999999;
+}
+
+.carrossel {
+  margin: 0px;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  filter: brightness(.5);
+}
+
+.fotos {
+  display: flex;
+  width: 100%; /* 3 fotos = 300% */
+  height: 100%;
+  transition: transform 0.9s ease-in-out;
+}
+
+.foto {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  flex-shrink: 0; 
+}
+
+.secao2 {
+  margin: 25px 50px;
+}
+
+.container {
+  gap: 30px;
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Overlay escuro */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #40e0d0;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  font-family: "Montserrat", serif;
+}
+
+.card-title {
+  font-size: 50px;
+  margin: 0 0 20px;
+  font-weight: bold;
+}
+
+.card-button {
+  background-color: #87ceeb; /* Cor do botão */
+  color: white;
+  padding: 15px 35px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: #72abc2; /* Cor do botão ao passar o mouse */
+}
+
+.image-item {
+  position: relative;
+  width: 390px; /* Largura do container da imagem */
+  height: 400px; /* Altura do container da imagem */
+  overflow: hidden; /* Garante que o fundo redondo não ultrapasse os limites */
+  transition: background-color 0.3s ease; /* Transição suave */
+  filter: brightness(.7);
+}
+
+.image-item img {
+  width: 100%; /* A imagem cobre todo o container */
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+  transition: transform 0.3s ease; /* Transição suave para o zoom */
+}
+
+.image-item:hover {
+  background-color: #ccc; /* Cor do fundo ao passar o mouse */
+  filter: brightness(.5);
+}
+
+.image-item:hover img {
+  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+.foto-loja {
+  margin: 50px 0;
+  gap: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.breve {
+  width: 500px;
+  border-radius: 50px;
+}
+
+.sla {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(243, 243, 243, 0.527);
+  padding: 80px 20px;
+  border-radius: 50px;
+}
+
+
+.fisica {
+  font-size: 3em;
+  font-family: "Montserrat", serif;
+  margin: 0;
+  color: #40e0d0;
+}
+
+.visite {
+  width: 40vw;
+  font-family: "Montserrat", serif;
+  font-size: 1.5em;
+  color: #000000;
+}
+
+.secao3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0 15px 0px;
+}
+
+.nossos-produtos {
+  font-family: "Montserrat", serif;
+  font-size: 2.5em;
+  color: #40e0d0;
+  margin: 0;
+  padding: 0;
+}
+
+.roupa {
+  margin: 20px 0%;
+  display: grid;
+  grid-template-columns: repeat(4, 20em);
+}
+
+.modelo {
+  border-radius: 2px;
+}
+
+.roupas1, .roupas2, .roupas3, .roupas4, .roupas5, .roupas6, .roupas7, .roupas8 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
+  font-family: "Montserrat", serif;
+  color: #000000;
+}
+
+.nome-roupa {
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.preco-roupa {
+  font-family: "Montserrat", serif;
+  font-weight: bolder;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.compra {
+  background-color: #87ceeb; /* Cor do botão */
+  color: white;
+  padding: 10px 40px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+  border: none;
+  margin: 10px 0 0 0;
+  font-family: "Montserrat", serif;
+}
+  
+ .compra:hover {
+  background-color: #72abc2; /* Cor do botão ao passar o mouse */
+}
+
+.compra-nosso {
+  padding: 8px 25px;
+  margin: 30px 0 50px 0;
+}
+
+.nossos {
+  background-color: #87ceeb; /* Cor do botão */
+  color: white;
+  padding: 10px 40px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+  border: none;
+  margin: 10px 0 0 0;
+  font-family: "Montserrat", serif;
+}
+  
+ .nossos:hover {
+  background-color: #72abc2; /* Cor do botão ao passar o mouse */
+}
+
+.maneiro {
+  color: #40e0d0;
+  font-family: "Montserrat", serif;
+  font-size: 2.5em;
+  margin: 80px 0 0 0;
+}
+
+.maneiro1 {
+  font-family: "Montserrat", serif;
+  font-size: 1.2em;
+  width: 70%;
+  text-align: center;
+}
+
+.secao4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0 100px 0;
+}
+
+.nossas-promocoes {
+  color: #40e0d0;
+  font-family: "Montserrat", serif;
+  font-size: 2.5em;
+}
+
+.fotos-promocoes {
+  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.kk {
+  border-radius: 5px;
+}
+
+.kkk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.secao5 {
+  margin: 0 35px;
+}
+
+.sobre {
+  color: #40e0d0;
+  font-family: "Montserrat", serif;
+  font-size: 2.5em;
+}
+
+.foto-texto1 {
+  gap: 50px;
+  display: flex;
+  align-items: center;
+  margin: 0 0 100px 0;
+}
+
+.foto1 {
+  width: 400px;
+  border-radius: 5px;
+}
+
+.texto-foto1 {
+  font-family: "Montserrat", serif;
+  font-size: 1.5em;
+}
+
+.titulo-foto1 {
+  font-size: 1.5em;
+  width: 430px;
+  color: #40e0d0;
+  font-family: "Montserrat", serif;
+}
+
+.foto-texto2 {
+  gap: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin: 0 0 50px 0;
+}
+
+.foto2 {
+  width: 400px;
+  border-radius: 5px;
+}
+
+.texto-foto2 {
+  font-family: "Montserrat", serif;
+  font-size: 1.5em;
+}
+
+.titulo-foto2 {
+  font-size: 1.5em;
+  width: 550px;
+  color: #40e0d0;
+  font-family: "Montserrat", serif;
+}
+
+.footer {
+  background-color: #f4f4f4;
+  padding: 0px 20px;
+  border-top: 1px solid #ddd;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #666;
+}
+
+.footer-section ul li a:hover {
+  color: #000;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 0px;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-bottom p {
+  margin: 10px 0;
+}
+
+.footer-bottom strong {
+  color: #333;
+}
+
+.footer-bottom a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+/*
+  font-family: "Montserrat", serif;
+  font-family: "Lexend Deca", serif;
+
